@@ -1,5 +1,11 @@
 .venv
-__pycache__
+__pycache__/
+*.py[cod]
+*.egg-info/
 *.pyc
-.idea
+.idea/
+.vscode/
 uv.lock
+build/
+dist/
+.env
