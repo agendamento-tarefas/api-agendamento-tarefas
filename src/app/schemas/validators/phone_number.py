@@ -10,10 +10,10 @@ from phonenumbers import (
 )
 from phonenumbers.phonenumberutil import NumberParseException
 
-from src.app.schemas.validators.core.validated_str import ValidatedStr
+from src.app.schemas.validators.core.validator_mixin import StringValidatorMixin
 
 
-class PhoneNumberStr(ValidatedStr):
+class PhoneNumberStr(StringValidatorMixin):
     @classmethod
     def _validate(cls, value: Any) -> str:
         if not isinstance(value, str):

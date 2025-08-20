@@ -13,7 +13,7 @@ from src.app.models.core.registry import table_registry
 
 
 @table_registry.mapped_as_dataclass()
-class SoftDelete:
+class SoftDeleteMixin:
     __abstract__ = True
 
     deleted_at: Mapped[datetime | None] = mapped_column(

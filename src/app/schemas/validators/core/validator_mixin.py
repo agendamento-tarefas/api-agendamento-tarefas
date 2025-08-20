@@ -4,7 +4,7 @@ from pydantic import GetCoreSchemaHandler
 from pydantic_core import core_schema
 
 
-class ValidatedStr(str):
+class StringValidatorMixin(str):
     @classmethod
     def _validate(cls, value: Any) -> str:
         raise NotImplementedError('You must implement _validate method')

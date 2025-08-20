@@ -1,4 +1,4 @@
-from src.app.schemas.validators.core.validated_str import ValidatedStr
+from src.app.schemas.validators.core.validator_mixin import StringValidatorMixin
 
 SPECIAL_CHARS: set[str] = {
     '@',
@@ -27,7 +27,7 @@ INCLUDES_LOWERCASE: bool = True
 INCLUDES_UPPERCASE: bool = True
 
 
-class PasswordStr(ValidatedStr):
+class PasswordStr(StringValidatorMixin):
     @classmethod
     def _validate(cls, v: str) -> str:
         if not MIN_LENGTH <= len(v) <= MAX_LENGTH:
